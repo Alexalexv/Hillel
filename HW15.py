@@ -6,7 +6,7 @@ sum_ = sum(filtered_list)
 k = 1
 product = 1
 for i in filtered_list:
-    if sum_ == 0:  # for cases when no elements between mini and maxi
+    if len(filtered_list) == 0:
         product = 0
     else:
         product = product * i * k  # k was added for cases where between mini and maxi only one element (another lst needed)
