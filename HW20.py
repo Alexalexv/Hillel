@@ -5,4 +5,4 @@ with open('file', 'r', ) as f:
         if line_len > len_:
             len_ = line_len
 
-print(f'Max length of string in file is {len_}')
+print(f'Max length of line in file is {len_}')
