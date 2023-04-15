@@ -1,7 +1,6 @@
 import json
 
-with open('users.json', 'a') as fj:
-    fj.write('[')
+lst_of_dict = []
 
 with open('users.txt', 'r') as f:
     for line in f:
@@ -31,11 +30,11 @@ with open('users.txt', 'r') as f:
             else:
                 phones_dict = phones_lst
             dict_ = {"name": name, "age": age_dict, "phones": phones_dict}
-            with open('users.json', 'a') as fj:
-                json.dump(dict_, fj)
-                fj.write(',')
+            lst_of_dict.append(dict_)
 
-with open('users.json', 'a') as fj:
-    p = fj.tell()
-    fj.truncate(p - 1)
-    fj.write(']')
+print(lst_of_dict)
+
+with open('users.json', 'w') as fj:
+    json.dump(lst_of_dict, fj)
+
+
