@@ -2,7 +2,6 @@ import json
 
 with open('users.json', 'a') as fj:
     fj.write('[')
-lst_of_dict = []
 
 with open('users.txt', 'r') as f:
     for line in f:
