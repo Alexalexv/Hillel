@@ -1,11 +1,13 @@
-lst = [12, 10, 9, 11, 2, 1, 5, 2, 5, 7, -1]
+lst = [1, 2, 2]
 
 
 def second_largest_number(lst):
+    set_ = set()
+    for i in lst:
+        set_.add(i)
     maxi = None
     less = None
-
-    for i in lst:
+    for i in set_:
         if maxi is None or i > maxi:
             less = maxi
             maxi = i
