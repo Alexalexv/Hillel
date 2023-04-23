@@ -1,17 +1,14 @@
+lst = [12, 10, 9, 11, 2, 1, 5, 2, 5, 7, -1]
+
+
 def second_largest_number(lst):
-    if len(lst):
-        max_ = float('-inf')
-        less = float('-inf')
-        for i in lst:
-            if i > max_:
-                less = max_
-                max_ = i
-            elif i > less:
-                less = i
-        return less
-    else:
-        return None
+    maxi = None
+    less = None
 
-
-lst_ = [-150, 4, 2, 1, 5, 2, 5,  7]
-print(second_largest_number(lst_))
+    for i in lst:
+        if maxi is None or i > maxi:
+            less = maxi
+            maxi = i
+        elif less is None or i > less:
+            less = i
+    return less
