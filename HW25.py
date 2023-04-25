@@ -1,7 +1,7 @@
 def call_counter(file):
     def call_counter_(func):
         def wrapper(*args):
-            # next line for crating file if it not exist
+            # next line for creating file if it not exists
             with open(f'{file}', 'a') as f:
                 pass
             with open(f'{file}', 'r') as f:
