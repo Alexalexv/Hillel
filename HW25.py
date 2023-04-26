@@ -1,6 +1,6 @@
 def call_counter(file):
     def call_counter_(func):
-        def wrapper(*args):
+        def wrapper(*args, **kwargs):
             func_name = func.__name__
             func_name_len = len(func_name)
 
