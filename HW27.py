@@ -1,16 +1,8 @@
-def gen(m, n):
-    for i in range(1, n + 1):
-        yield i
-    for i in range(1, n + 1):
-        yield i ** 2
-    exp = 2
-    for i in range(1, n + 1):
-        if exp <= m:
-            yield i ** exp
-            exp += 1
-        else:
-            yield i ** m
+def generator(m, n):
+    for i in range(1, m + 1):
+        for a in range(1, n + 1):
+            yield a ** i
 
 
-for i in gen(3, 4):
+for i in generator(2, 2):
     print(i)
