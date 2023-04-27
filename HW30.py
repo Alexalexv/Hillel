@@ -10,9 +10,9 @@ date = datetime.strptime(first_l, '%d/%m/%Y %H:%M')
 counter = 1
 
 while counter <= l_count:
-    print(date.strftime(f'Lecture  {counter:2}: %d %b %Y %H:%M'))
+    print("Lecture {:>2}: {:>17}".format(str(counter), date.strftime('%d %b %Y %H:%M')))
     counter += 1
     date += diff_1
-    print(date.strftime(f'Lecture  {counter:2}: %d %b %Y %H:%M'))
+    print("Lecture {:>2}: {:>17}".format(str(counter), date.strftime('%d %b %Y %H:%M')))
     counter += 1
     date += diff_2
