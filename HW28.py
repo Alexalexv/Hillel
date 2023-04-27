@@ -6,8 +6,7 @@ Please write me how are you doing? Goodbye...
 
 
 def generate_sentence(text: str):
-    text = text.replace('\n', ' ')
-    lst = list(re.findall(r"""(?:^|! |\? |\. )(\w*)""", text))
+    lst = re.findall(r"""(?:^|! |\? |\. )(\w*)""", text, flags=re.M)
     str_=' '.join(lst).rstrip()
     return str_.capitalize()+'.'
 
