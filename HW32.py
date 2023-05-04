@@ -1,6 +1,14 @@
 def custom_map(func, *seq):
-    result = list(map(func, *seq))
-    return result
+    if len(seq) == 1:
+        result = []
+        for i in list(*seq):
+            result.append(func(i))
+        return result
+    else:
+        result = []
+        for i in zip(*seq):
+            result.append(func(*i))
+        return result
 
 
 print(custom_map(sum, [[1, 2, 3], [4, 5]]))
