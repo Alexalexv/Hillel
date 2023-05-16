@@ -4,7 +4,8 @@ class AttributePrinterMixin:
         str_ = f'{class_name}: {{\n'
         for k, v in self.__dict__.items():
             k = k.replace('_A__', '')
-            k = k.replace('_', '')
+            if k[0] == '_':
+                k = k[1:]
             str_ = str_ + f'\t{k}: ' + f'{v}\n'
         str_ = str_ + '}'
         return str_
