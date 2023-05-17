@@ -14,12 +14,12 @@ class AttributePrinterMixin:
         return str_
 
 
-class B:
+class B_b_123:
     def __init__(self):
         self.__private_in_B = 'private_in_B'
 
 
-class A(B, AttributePrinterMixin):
+class A(B_b_123, AttributePrinterMixin):
     pass
 
 
