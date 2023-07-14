@@ -84,3 +84,26 @@ class ClientRepository(AbstractRepository):
 
     def update_status_by_number(self, number, status):
         self._cursor.execute(f"""UPDATE clients SET status = {status} WHERE number = {number}""")
+
+
+repo = ClientRepository('dbs/test.db')
+user1 = Client('Harry', 'Potter', '93412', 1, 2)
+user2 = Client('John', 'Rambo', '1221', 2, 1)
+
+# Add client
+repo.add_client(user1)
+repo.add_client(user2)
+
+# Search client:
+print(repo.get_all_clients())
+print(repo.search_client_by_text('name', 'Jo'))
+
+# Update status
+repo.update_status_by_number(2,3)
+
+# Delete user
+repo.delete_by_number(2)
+
+
+
+
